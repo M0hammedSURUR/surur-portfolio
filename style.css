@@ -1060,3 +1060,65 @@ footer {
 
 }
 
+/* ===========================
+   EXPERIENCE
+=========================== */
+
+.experience-list{
+
+    display:grid;
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.experience-card{
+
+    background:#161B22;
+
+    border:1px solid #30363D;
+
+    border-radius:16px;
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#3B82F6;
+
+}
+
+.experience-card h3{
+
+    color:#3B82F6;
+
+    margin-bottom:8px;
+
+}
+
+.experience-card h4{
+
+    color:#CBD5E1;
+
+    margin-bottom:18px;
+
+    font-weight:500;
+
+}
+
+.experience-card p{
+
+    color:#94A3B8;
+
+    line-height:1.8;
+
+}
+
