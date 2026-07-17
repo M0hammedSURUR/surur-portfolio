@@ -73,3 +73,68 @@ topBtn.addEventListener("click", () => {
     });
 
 });
+
+// ===========================
+// Scroll Reveal Animation
+// ===========================
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+    revealElements.forEach((element) => {
+
+        const windowHeight = window.innerHeight;
+
+        const elementTop = element.getBoundingClientRect().top;
+
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+// Run once when page loads
+revealOnScroll();
+
+// ===========================
+// Active Navigation
+// ===========================
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let currentSection = "";
+
+    sections.forEach((section) => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+        }
+
+    });
+
+    navItems.forEach((link) => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
