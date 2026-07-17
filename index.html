@@ -16,82 +16,127 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+    <div id="progress-bar"></div>
+
     <!-- ================= NAVBAR ================= -->
 
-    <header>
-        <nav class="navbar">
+    <header id="header">
 
-            <div class="logo">
+        <nav class="navbar container">
+
+            <a href="#home" class="logo">
+                <span class="logo-blue">&lt;/&gt;</span>
                 Mohammed Surur
-            </div>
+            </a>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
 
-                <li><a href="#home">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#skills">Skills</a></li>
-
-                <li><a href="#experience">Experience</a></li>
-
-                <li><a href="#projects">Projects</a></li>
-
-                <li><a href="#certifications">Certificates</a></li>
-
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#experience">Experience</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#certifications">Certificates</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
 
             </ul>
 
+            <!-- Mobile Menu Button -->
+            <div class="menu-btn" id="menuBtn">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
         </nav>
+
     </header>
 
     <!-- ================= HERO ================= -->
 
     <section id="home" class="hero">
 
-        <div class="hero-content">
+        <div class="container hero-container">
 
-            <p class="hello">
-                Hello, I'm
-            </p>
+            <!-- Left Side -->
+            <div class="hero-content">
 
-            <h1>
-                Mohammed Surur
-            </h1>
+                <p class="hello">
+                    👋 Hello, I'm
+                </p>
 
-            <h2>
-                Aspiring Linux System Administrator
-            </h2>
+                <h1>
+                    Mohammed Surur
+                </h1>
 
-            <h3>
-                Software Tester • AI & Machine Learning Enthusiast
-            </h3>
+                <h2>
+                    Aspiring Linux System Administrator
+                </h2>
 
-            <p class="hero-text">
+                <p class="hero-subtitle">
+                    Software Tester • AI & Machine Learning Enthusiast
+                </p>
 
-                I enjoy building practical technical skills through Linux,
-                software testing, machine learning, and web development.
-                I continuously learn new technologies and enjoy solving
-                real-world technical problems.
+                <p class="hero-text">
+                    Passionate about Linux, System Administration, Software Testing,
+                    and Artificial Intelligence. I enjoy solving real-world technical
+                    problems, building practical projects, and continuously expanding
+                    my technical knowledge.
+                </p>
 
-            </p>
+                <div class="hero-buttons">
 
-            <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">
+                        View Projects
+                    </a>
 
-                <a href="#projects" class="btn primary">
-                    View Projects
-                </a>
+                    <a href="#contact" class="btn secondary">
+                        Contact Me
+                    </a>
 
-                <a href="#contact" class="btn secondary">
-                    Contact Me
-                </a>
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="hero-card">
+
+                <div class="status">
+                    ● Open to Opportunities
+                </div>
+
+                <h3>Quick Overview</h3>
+
+                <div class="info">
+
+                    <div class="info-item">
+                        <span>🎓 Education</span>
+                        <p>B.Sc. Multimedia & Web Technology with AI & Robotics</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span>🐧 Primary Interest</span>
+                        <p>Linux & System Administration</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span>🧪 Focus Areas</span>
+                        <p>Software Testing • AI • Machiene Learning
+                    </div>
+
+                    <div class="info-item">
+                        <span>📍 Goal</span>
+                        <p>Become a System Administrator</p>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -208,13 +253,15 @@
                 <div class="timeline-item">
                     <h3>Research Intern</h3>
                     <h4>TIFR – GRAPES-3 Experiment</h4>
-                    <p>Worked on research activities and gained practical experience in scientific data analysis and technical workflows.</p>
+                    <p>Worked on research activities and gained practical experience in scientific data analysis and
+                        technical workflows.</p>
                 </div>
 
                 <div class="timeline-item">
                     <h3>SDET Intern</h3>
                     <h4>Software Development Engineer in Test</h4>
-                    <p>Learned software testing concepts, test execution, bug reporting, and quality assurance practices.</p>
+                    <p>Learned software testing concepts, test execution, bug reporting, and quality assurance
+                        practices.</p>
                 </div>
 
                 <div class="timeline-item">
@@ -361,6 +408,11 @@
         </div>
 
     </footer>
+
+    <!-- Back To Top Button -->
+    <button id="topBtn" title="Back to Top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 
