@@ -185,6 +185,18 @@ header.scrolled{
 
 }
 
+#menuBtn{
+
+    display:none;
+
+    font-size:32px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+}
+
 /* ===========================
    HERO
 =========================== */
@@ -802,7 +814,7 @@ footer {
 
     grid-template-columns:1.2fr .8fr;
 
-    gap:50px;
+    gap:40px;
 
     align-items:start;
 
@@ -861,6 +873,49 @@ footer {
     color:#CBD5E1;
 
 }
+
+/* ===========================
+   MOBILE - ABOUT
+=========================== */
+
+@media (max-width:768px){
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .about-text{
+
+        text-align:left;
+
+    }
+
+    .about-text p{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+    .about-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-card{
+
+        width:100%;
+
+    }
+
+}
+
 
 /* ===========================
    PROJECTS
@@ -1279,3 +1334,132 @@ footer {
     color:#94A3B8;
 
 }
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    background:#0D1117;
+
+    border-top:1px solid #30363D;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+}
+
+.footer-title{
+
+    font-size:18px;
+
+    color:#F8FAFC;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.footer p{
+
+    color:#94A3B8;
+
+    margin:6px 0;
+
+}
+
+.footer-status{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    color:#64748B;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        height:auto;
+        padding:15px 0;
+
+    }
+
+    .logo{
+
+        font-size:22px;
+
+    }
+
+    #menuBtn{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:20px;
+        gap:15px;
+
+    }
+
+    .nav-links.show{
+
+        display:flex;
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+        gap:30px;
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .certifications-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section-title{
+
+        font-size:42px;
+
+    }
+
+}
+

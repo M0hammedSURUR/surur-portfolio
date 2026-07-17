@@ -1,27 +1,35 @@
-// Mobile Menu
+// ===========================
+// Mobile Navigation
+// ===========================
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navLinks) {
 
-    navLinks.classList.toggle("show");
+    menuBtn.addEventListener("click", () => {
 
-});
+        navLinks.classList.toggle("show");
 
+    });
+
+}
+
+// ===========================
 // Navbar Shadow
+// ===========================
 
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 50){
+    if (!header) return;
+
+    if (window.scrollY > 50) {
 
         header.classList.add("scrolled");
 
-    }
-
-    else{
+    } else {
 
         header.classList.remove("scrolled");
 
@@ -29,17 +37,25 @@ window.addEventListener("scroll", () => {
 
 });
 
-// Scroll Progress
+// ===========================
+// Scroll Progress Bar
+// ===========================
 
-window.addEventListener("scroll",()=>{
+const progressBar = document.getElementById("progress-bar");
 
-const winScroll=document.documentElement.scrollTop;
+window.addEventListener("scroll", () => {
 
-const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    if (!progressBar) return;
 
-const scrolled=(winScroll/height)*100;
+    const scrollTop = document.documentElement.scrollTop;
 
-document.getElementById("progress-bar").style.width=scrolled+"%";
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = progress + "%";
 
 });
 
@@ -49,30 +65,34 @@ document.getElementById("progress-bar").style.width=scrolled+"%";
 
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+if (topBtn) {
 
-    if (window.scrollY > 300) {
+    window.addEventListener("scroll", () => {
 
-        topBtn.style.display = "block";
+        if (window.scrollY > 300) {
 
-    } else {
+            topBtn.style.display = "block";
 
-        topBtn.style.display = "none";
+        } else {
 
-    }
+            topBtn.style.display = "none";
 
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-        behavior: "smooth"
+        }
 
     });
 
-});
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
 
 // ===========================
 // Scroll Reveal Animation
@@ -102,7 +122,6 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-// Run once when page loads
 revealOnScroll();
 
 // ===========================
@@ -121,7 +140,9 @@ window.addEventListener("scroll", () => {
         const sectionTop = section.offsetTop - 150;
 
         if (window.scrollY >= sectionTop) {
+
             currentSection = section.getAttribute("id");
+
         }
 
     });
@@ -131,10 +152,53 @@ window.addEventListener("scroll", () => {
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + currentSection) {
+
             link.classList.add("active");
+
         }
 
     });
 
 });
 
+// ===========================
+// Smooth Scroll for Navigation
+// ===========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+        if (navLinks) {
+
+            navLinks.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+// ===========================
+// Footer Year
+// ===========================
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+
+    yearElement.textContent = new Date().getFullYear();
+
+}
