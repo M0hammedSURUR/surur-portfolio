@@ -1122,3 +1122,58 @@ footer {
 
 }
 
+/* ===========================
+   CERTIFICATIONS
+=========================== */
+
+.certifications-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.certificate-card{
+
+    background:#161B22;
+
+    border:1px solid #30363D;
+
+    border-radius:16px;
+
+    padding:30px;
+
+    transition:.3s;
+
+    text-align:center;
+
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#3B82F6;
+
+}
+
+.certificate-card h3{
+
+    color:#3B82F6;
+
+    margin-bottom:15px;
+
+}
+
+.certificate-card p{
+
+    color:#94A3B8;
+
+    line-height:1.7;
+
+}
