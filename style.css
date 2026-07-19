@@ -3,6 +3,222 @@
    STYLE.CSS
 ====================================================== */
 
+/* ======================================
+   LOADING SCREEN
+====================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    background:var(--bg);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:opacity .6s ease,
+               visibility .6s ease;
+
+}
+
+#loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.terminal-loader{
+
+    width:380px;
+
+    max-width:90%;
+
+    background:#161B22;
+
+    border:1px solid #30363D;
+
+    border-radius:14px;
+
+    padding:30px;
+
+}
+
+.loader-terminal-header{
+
+    height:42px;
+
+    background:#0F172A;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 15px;
+
+}
+
+.loader-terminal-path{
+
+    margin-left:15px;
+
+    color:#CBD5E1;
+
+    font-size:13px;
+
+    font-family:Consolas, monospace;
+
+}
+
+.loader-terminal-content{
+
+    padding:25px;
+
+}
+
+.loader-terminal-line{
+
+    color:#CBD5E1;
+
+    font-family:Consolas, monospace;
+
+    margin-bottom:12px;
+
+    font-size:15px;
+
+}
+
+#loading-output{
+
+    min-height:150px;
+
+    margin:18px 0;
+
+}
+
+.loading-line{
+
+    font-family:Consolas, monospace;
+
+    color:#22C55E;
+
+    margin-bottom:8px;
+
+    opacity:0;
+
+    animation:fadeIn .3s forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(5px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#loading-message{
+
+    color:#3B82F6;
+
+    min-height:22px;
+
+}
+
+.terminal-line{
+
+    font-family:Consolas, monospace;
+
+    color:#CBD5E1;
+
+    margin-bottom:12px;
+
+}
+
+.prompt{
+
+    color:#3B82F6;
+
+    font-weight:bold;
+
+}
+
+.loader-progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#1E293B;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:25px 0;
+
+}
+
+.loader-progress span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:#3B82F6;
+
+    animation:loading 1.5s linear forwards;
+
+}
+
+.loading-text{
+
+    text-align:center;
+
+    color:#94A3B8;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+
 /* ======================================================
    VARIABLES
 ====================================================== */

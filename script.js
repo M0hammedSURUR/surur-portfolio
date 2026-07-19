@@ -202,3 +202,59 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 
 }
+
+// ======================================
+// TERMINAL LOADER
+// ======================================
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    const output = document.getElementById("loading-output");
+
+    const messages = [
+
+        "[ OK ] Loading Skills...",
+        "[ OK ] Loading Projects...",
+        "[ OK ] Loading Experience...",
+        "[ OK ] Loading Certifications.",
+        "[ OK ] Loading Contact...",
+        "[ OK ] Initializing Portfolio.",
+        "",
+        "Welcome, Mohammed Surur"
+
+    ];
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+
+        const line = document.createElement("p");
+
+        line.className = "loading-line";
+
+        line.textContent = messages[index];
+
+        output.appendChild(line);
+
+        output.scrollTop = output.scrollHeight;
+
+        index++;
+
+        if(index >= messages.length){
+
+            clearInterval(interval);
+
+            setTimeout(() => {
+
+                loader.classList.add("hide");
+
+            },700);
+
+        }
+
+    },250);
+
+});
+
