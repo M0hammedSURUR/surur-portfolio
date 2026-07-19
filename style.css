@@ -479,13 +479,21 @@ header.scrolled {
 
 }
 
-.logo {
+.logo{
 
-    font-size: 26px;
+    text-decoration:none;
 
-    font-weight: 700;
+    color:#60A5FA;
 
-    color: white;
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.logo-blue{
+
+    color:#2563EB;
 
 }
 
@@ -579,6 +587,56 @@ header.scrolled {
 
 }
 
+/* ======================================
+   TERMINAL TITLE
+====================================== */
+
+.terminal-title{
+
+    color:#22C55E;
+
+    font-family:Consolas, monospace;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+}
+
+/* ======================================
+   HERO TYPING
+====================================== */
+
+#typing{
+
+    color:white;
+
+}
+
+#typing::after{
+
+    content:"|";
+
+    color:#3B82F6;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
 .hello {
 
     color: var(--primary);
@@ -596,6 +654,8 @@ header.scrolled {
     margin-bottom: 20px;
 
     line-height: 1.1;
+
+    color: #3d73e7;
 
 }
 

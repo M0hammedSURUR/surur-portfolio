@@ -226,7 +226,7 @@ window.addEventListener("load", () => {
 
     ];
 
-    let index = 0;
+    let lineIndex = 0;
 
     const interval = setInterval(() => {
 
@@ -234,15 +234,15 @@ window.addEventListener("load", () => {
 
         line.className = "loading-line";
 
-        line.textContent = messages[index];
+        line.textContent = messages[lineIndex];
 
         output.appendChild(line);
 
         output.scrollTop = output.scrollHeight;
 
-        index++;
+        lineIndex++;
 
-        if(index >= messages.length){
+        if (lineIndex >= messages.length) {
 
             clearInterval(interval);
 
@@ -250,11 +250,39 @@ window.addEventListener("load", () => {
 
                 loader.classList.add("hide");
 
-            },700);
+                // Start typing after loader disappears
+                typing.textContent = "";
+                index = 0;
+                typeHero();
+
+            }, 700);
 
         }
 
-    },250);
+    }, 250);
 
 });
 
+// ======================================
+// HERO TYPING
+// ======================================
+
+const typing = document.getElementById("typing");
+
+const text = "Aspiring Linux System Administrator";
+
+let index = 0;
+
+function typeHero() {
+
+    if (index < text.length) {
+
+        typing.textContent += text.charAt(index);
+
+        index++;
+
+        setTimeout(typeHero, 70);
+
+    }
+
+}
